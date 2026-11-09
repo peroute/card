@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bouassida;Hedi;;;
+FN:Hedi Bouassida
+ORG:Texas Tech University
+TITLE:Computer Science Student
+TEL;TYPE=CELL:+15555550100
+item1.URL:https://www.linkedin.com/in/hedi-bouassida
+item1.X-ABLabel:LinkedIn
+END:VCARD
