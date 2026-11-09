@@ -1,218 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mahmoud Bouassida</title>
-<meta name="description" content="Mahmoud Bouassida, agricultural expert and consultant. 20+ years of experience with citrus, apples, grapes and agricultural projects.">
+<title>Mahmoud Bouassida · CEO, Sté Yasmine</title>
+<meta name="description" content="Mahmoud Bouassida, CEO of Sté Yasmine de développement et exploitation agricole. Agricultural expert and consultant with 20+ years in citrus, apples, grapes and agricultural projects. Takelsa, Nabeul, Tunisia.">
+<!-- Link preview (WhatsApp, LinkedIn, iMessage) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mahmoud Bouassida · CEO, Sté Yasmine">
+<meta property="og:description" content="Agricultural expert and consultant · Citrus, apples, grapes · 20+ years in the field · Takelsa, Nabeul, Tunisia">
+<meta property="og:url" content="https://peroute.github.io/card/">
+<meta property="og:image" content="https://peroute.github.io/card/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#e7eadb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121710" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#24432d">
 <style>
-  /* ---- Theme: edit colors here. Dark mode overrides are below. ---- */
+  /* ---------- Theme ---------- */
   :root {
-    --bg: #e7eadb;          /* sage */
-    --card: #fafaf4;
-    --text: #2a2a1f;        /* dark loam */
-    --muted: #66654f;
-    --line: #d9dcc8;
-    --primary: #2f5d3a;     /* leaf green */
-    --primary-text: #f6f7ee;
-    --btn: #eff1e4;
-    --btn-hover: #e4e8d4;
-    --focus: #e8891c;
-    --crops: #3f6b35;       /* "Citrus, apples, grapes..." line */
-
-    /* Orchard illustration */
-    --band: #dde6cc;        /* orchard background */
-    --grass: #c9d8b0;
-    --orange: #e8891c;
-    --orange-flesh: #f4a23a;
-    --pith: #fce7c2;
-    --lemon: #efc93a;
-    --apple: #c8372d;
-    --grape: #6b3a6e;
-    --grape-2: #82508a;
-    --leaf: #5e8f3e;
-    --stem: #6b4a2b;
+    --bg: #eeece4;
+    --card: #fcfbf7;
+    --text: #1d2219;
+    --muted: #5d6356;
+    --line: #e2e0d5;
+    --brand: #24432d;        /* deep orchard green */
+    --brand-2: #2f5839;
+    --on-brand: #f4f2e9;
+    --accent: #b5832f;       /* harvest ochre, used sparingly */
+    --chip: #eef0e6;
+    --chip-text: #34492f;
+    --btn: #f3f2ec;
+    --btn-hover: #e9e8df;
+    --focus: #b5832f;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121710;
-      --card: #1a2017;
-      --text: #e9ebdd;
-      --muted: #a3a68e;
-      --line: #2c3427;
-      --primary: #8fb86f;
-      --primary-text: #142012;
-      --btn: #242c20;
-      --btn-hover: #2d3628;
-      --focus: #f0a04a;
-      --crops: #a9c98c;
-
-      --band: #202a1c;
-      --grass: #283522;
-      --orange: #d07a1a;
-      --orange-flesh: #dc9033;
-      --pith: #e6d3ad;
-      --lemon: #d4b334;
-      --apple: #b0322a;
-      --grape: #5e3462;
-      --grape-2: #73467a;
-      --leaf: #4f7a35;
-      --stem: #8a6a48;
+      --bg: #0f130f;
+      --card: #171c16;
+      --text: #ebede4;
+      --muted: #a3a898;
+      --line: #2a3127;
+      --brand: #1f3a27;
+      --brand-2: #284a32;
+      --on-brand: #eef0e4;
+      --accent: #d6a24c;
+      --chip: #222a1f;
+      --chip-text: #c5d6b5;
+      --btn: #1f251d;
+      --btn-hover: #273024;
+      --focus: #d6a24c;
     }
   }
 
-  * { box-sizing: border-box; margin: 0; }
-  html, body { min-height: 100%; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", "Geeza Pro", sans-serif;
     background: var(--bg);
     color: var(--text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+    min-height: 100vh; min-height: 100dvh;
+    display: flex; align-items: center; justify-content: center;
+    padding: max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom));
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
   }
   main {
-    width: 100%;
-    max-width: 400px;
+    width: 100%; max-width: 400px;
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 20px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20,30,15,.04), 0 12px 32px -12px rgba(20,30,15,.18);
+  }
+
+  /* ---------- Header: orchard rows seen from above ---------- */
+  header {
+    position: relative;
+    height: 92px;
+    background: var(--brand);
+    color: var(--on-brand);
+  }
+  header svg.rows { position: absolute; inset: 0; width: 100%; height: 100%; }
+  header svg.rows line { stroke: var(--on-brand); stroke-opacity: .09; stroke-width: 1.2; }
+  header svg.rows circle { fill: var(--on-brand); fill-opacity: .10; }
+
+  .lang {
+    position: absolute; top: 14px; inset-inline-end: 14px;
+    display: flex; gap: 2px;
+    background: rgba(0,0,0,.18);
+    border-radius: 999px; padding: 3px;
+  }
+  .lang button {
+    font: inherit; font-size: 13px; font-weight: 600;
+    color: var(--on-brand); opacity: .75;
+    background: none; border: 0; cursor: pointer;
+    min-width: 34px; height: 28px; padding: 0 8px; border-radius: 999px;
+  }
+  .lang button[aria-pressed="true"] { background: var(--on-brand); color: var(--brand); opacity: 1; }
+  .lang button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .no-js .lang { display: none; }
+
+  .mono {
+    position: absolute; bottom: -32px; inset-inline-start: 22px;
+    width: 70px; height: 70px; border-radius: 50%;
+    background: var(--card);
+    border: 4px solid var(--card);
+    display: grid; place-items: center;
     overflow: hidden;
   }
-
-  /* Orchard illustration: citrus, apple, grapes */
-  .orchard { display: block; width: 100%; height: auto; }
-  .orchard .band { fill: var(--band); }
-  .orchard .grass { fill: var(--grass); }
-  .orchard .orange { fill: var(--orange); }
-  .orchard .flesh { fill: var(--orange-flesh); }
-  .orchard .pith { fill: var(--pith); }
-  .orchard .divide { stroke: var(--pith); stroke-width: 2.5; stroke-linecap: round; }
-  .orchard .lemon { fill: var(--lemon); }
-  .orchard .apple { fill: var(--apple); }
-  .orchard .grape { fill: var(--grape); }
-  .orchard .grape-2 { fill: var(--grape-2); }
-  .orchard .leaf { fill: var(--leaf); }
-  .orchard .stem { fill: none; stroke: var(--stem); stroke-width: 3; stroke-linecap: round; }
-  .orchard .shine { fill: #ffffff; opacity: .22; }
-
-  /* One load moment: the three fruits rise in, left to right. */
-  .orchard .fruit { animation: rise .7s cubic-bezier(.2, .7, .3, 1) both; }
-  .orchard .fruit:nth-of-type(2) { animation-delay: .12s; }
-  .orchard .fruit:nth-of-type(3) { animation-delay: .24s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) { .orchard .fruit { animation: none; } }
-
-  .body { padding: 26px 24px 24px; }
-  h1 {
-    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-    font-size: 34px;
-    line-height: 1.1;
-    font-weight: 600;
-    letter-spacing: -0.3px;
+  .mono span {
+    width: 100%; height: 100%; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--brand-2); color: var(--on-brand);
+    font-size: 24px; font-weight: 700; letter-spacing: .5px;
   }
-  .title { margin-top: 8px; color: var(--text); font-size: 17px; line-height: 1.4; }
-  .exp { margin-top: 2px; color: var(--muted); font-size: 15px; line-height: 1.45; }
-  .crops { margin-top: 14px; color: var(--crops); font-size: 15px; font-weight: 600; line-height: 1.45; text-wrap: balance; }
+  .mono img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-  .actions { margin-top: 26px; display: grid; gap: 10px; }
+  /* ---------- Identity ---------- */
+  .body { padding: 44px 22px 22px; }
+  h1 { font-size: 28px; line-height: 1.15; font-weight: 700; letter-spacing: -.4px; }
+  .role { margin-top: 6px; font-size: 17px; font-weight: 600; color: var(--brand-2); }
+  .company { margin-top: 2px; font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4; text-wrap: balance; }
+  @media (prefers-color-scheme: dark) { .role { color: #b9cfa5; } }
+  .sub { margin-top: 8px; font-size: 15px; color: var(--muted); line-height: 1.45; }
+  .where { margin-top: 10px; display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); }
+  .where svg { width: 16px; height: 16px; flex: none; }
+
+  /* ---------- Credentials strip ---------- */
+  .facts {
+    margin-top: 16px; padding: 14px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .years { display: flex; align-items: baseline; gap: 8px; }
+  .years b { font-size: 28px; line-height: 1; font-weight: 800; color: var(--accent); letter-spacing: -.5px; }
+  .years small { font-size: 14px; line-height: 1.25; color: var(--muted); font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips li {
+    list-style: none;
+    font-size: 13.5px; font-weight: 600; line-height: 1;
+    padding: 7px 11px; border-radius: 999px; white-space: nowrap;
+    background: var(--chip); color: var(--chip-text);
+  }
+
+  /* ---------- Actions ---------- */
+  .actions { margin-top: 18px; display: grid; gap: 10px; }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   a.btn {
     display: flex; align-items: center; justify-content: center; gap: 10px;
-    min-height: 52px;
-    padding: 0 16px;
-    border-radius: 12px;
-    background: var(--btn);
-    border: 1px solid var(--line);
-    color: var(--text);
-    text-decoration: none;
-    font-size: 16px; font-weight: 600;
+    min-height: 54px; padding: 0 14px; border-radius: 14px;
+    background: var(--btn); border: 1px solid var(--line);
+    color: var(--text); text-decoration: none;
+    font-size: 15px; font-weight: 600;
     -webkit-tap-highlight-color: transparent;
     transition: background-color .15s ease, transform .1s ease;
   }
+  .row a.btn { flex-direction: column; gap: 5px; min-height: 68px; font-size: 13px; }
   a.btn:hover { background: var(--btn-hover); }
-  a.btn:active { transform: scale(0.98); }
+  a.btn:active { transform: scale(.98); }
   a.btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
-  a.btn.primary {
-    background: var(--primary); border-color: var(--primary);
-    color: var(--primary-text); font-size: 17px; min-height: 56px;
+  a.btn.primary { background: var(--brand); border-color: var(--brand); color: var(--on-brand); font-size: 17px; min-height: 56px; }
+  a.btn.primary:hover { background: var(--brand-2); }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .wa svg { color: #1f9d55; }
+  @media (prefers-color-scheme: dark) {
+    .wa svg { color: #4cc27f; }
+    a.btn.primary { background: #a3c585; border-color: #a3c585; color: #142012; }
+    a.btn.primary:hover { background: #b2d095; }
+    .mono span { background: #3b6344; }
   }
-  a.btn.primary:hover { filter: brightness(1.08); }
-  .btn svg { width: 20px; height: 20px; flex: none; }
 
-  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  /* ---------- RTL tweaks ---------- */
+  [dir="rtl"] body, [dir="rtl"] { font-family: "Noto Sans Arabic", "Geeza Pro", "Segoe UI", Tahoma, sans-serif; }
+  [dir="rtl"] h1 { letter-spacing: 0; }
+  [dir="rtl"] .chips li { font-size: 14.5px; }
 </style>
 </head>
-<body>
+<body class="no-js">
 <main>
-  <!-- Orchard illustration: citrus, apple, grapes. Colors come from the CSS variables above. -->
-  <svg class="orchard" viewBox="0 0 400 150" aria-hidden="true" focusable="false">
-    <rect class="band" width="400" height="150"/>
-    <rect class="grass" y="128" width="400" height="22"/>
+  <header>
+    <svg class="rows" viewBox="0 0 400 92" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="trees" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+          <line x1="0" y1="11" x2="22" y2="11"/>
+          <circle cx="11" cy="11" r="3.2"/>
+        </pattern>
+      </defs>
+      <rect width="400" height="92" fill="url(#trees)"/>
+    </svg>
 
-    <!-- Citrus: a whole lemon behind a cut orange showing its segments -->
-    <g class="fruit">
-      <ellipse class="lemon" cx="52" cy="62" rx="22" ry="16" transform="rotate(-25 52 62)"/>
-      <circle class="orange" cx="84" cy="84" r="36"/>
-      <circle class="pith" cx="84" cy="84" r="32"/>
-      <circle class="flesh" cx="84" cy="84" r="29"/>
-      <path class="divide" d="M84 84V55M84 84V113M84 84H55M84 84H113M84 84L63.5 63.5M84 84L104.5 63.5M84 84L63.5 104.5M84 84L104.5 104.5"/>
-      <circle class="pith" cx="84" cy="84" r="4"/>
-    </g>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="fr" lang="fr">FR</button>
+      <button type="button" data-set-lang="ar" lang="ar">ع</button>
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+    </div>
 
-    <!-- Apple -->
-    <g class="fruit">
-      <path class="apple" d="M200 64C188 54 166 58 164 82C162 106 182 124 194 120C198 119 202 119 206 120C218 124 238 106 236 82C234 58 212 54 200 64Z"/>
-      <path class="stem" d="M200 64C200 56 202 50 205 46"/>
-      <path class="leaf" d="M205 50C212 38 228 37 233 43C225 53 212 56 205 50Z"/>
-      <ellipse class="shine" cx="179" cy="78" rx="5" ry="10" transform="rotate(-20 179 78)"/>
-    </g>
-
-    <!-- Grapes on the vine -->
-    <g class="fruit">
-      <path class="stem" d="M320 48C321 42 324 38 332 38"/>
-      <path class="leaf" d="M330 40C334 26 350 21 358 29C367 29 370 40 364 46C366 55 353 59 347 53C339 55 330 49 330 40Z"/>
-      <circle class="grape" cx="293" cy="58" r="9.5"/>
-      <circle class="grape-2" cx="311" cy="58" r="9.5"/>
-      <circle class="grape" cx="329" cy="58" r="9.5"/>
-      <circle class="grape-2" cx="347" cy="58" r="9.5"/>
-      <circle class="grape-2" cx="302" cy="74" r="9.5"/>
-      <circle class="grape" cx="320" cy="74" r="9.5"/>
-      <circle class="grape-2" cx="338" cy="74" r="9.5"/>
-      <circle class="grape" cx="311" cy="90" r="9.5"/>
-      <circle class="grape-2" cx="329" cy="90" r="9.5"/>
-      <circle class="grape" cx="320" cy="106" r="9.5"/>
-    </g>
-  </svg>
+    <!-- PHOTO: to use a portrait, add photo.jpg to the repo and replace the <span> with:
+         <img src="photo.jpg" alt="Mahmoud Bouassida"> -->
+    <div class="mono"><span aria-hidden="true">MB</span></div>
+  </header>
 
   <div class="body">
     <h1>Mahmoud Bouassida</h1>
-    <p class="title">Agricultural expert and consultant</p>
-    <p class="exp">20+ years of experience</p>
-    <p class="crops">Citrus, apples, grapes and agricultural projects</p>
+    <p class="role" data-i18n="role">CEO</p>
+    <!-- COMPANY: legal name, kept in French in every language -->
+    <p class="company"><bdi lang="fr" dir="ltr">Sté Yasmine de développement et exploitation agricole</bdi></p>
+    <p class="sub" data-i18n="sub">Agricultural expert &amp; consultant</p>
+    <p class="where">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span data-i18n="where">Takelsa, Nabeul, Tunisia</span>
+    </p>
 
-    <div class="actions">
-      <!-- Save contact: opens the native "Add to Contacts" sheet on iOS / Android. -->
-      <a class="btn primary" href="mahmoud.vcf">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-        Save contact
-      </a>
-
-      <!-- EMAIL: change the address after "mailto:" (also in mahmoud.vcf) -->
-      <a class="btn" href="mailto:mahmoud.bouassida@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        Email
-      </a>
+    <div class="facts">
+      <p class="years"><b><bdi dir="ltr">20+</bdi></b><small data-i18n="years">years in the field</small></p>
+      <ul class="chips">
+        <li data-i18n="c1">Citrus</li>
+        <li data-i18n="c2">Apples</li>
+        <li data-i18n="c3">Grapes</li>
+      </ul>
     </div>
 
-    <p class="note">Tap “Save contact” to add me to your phone.</p>
+    <div class="actions">
+      <a class="btn primary" href="mahmoud.vcf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+        <span data-i18n="save">Save contact</span>
+      </a>
+      <div class="row">
+        <!-- PHONE: change the digits in all three places below (wa.me, tel:) and in mahmoud.vcf -->
+        <a class="btn wa" href="https://wa.me/21699894545">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+          <span data-i18n="wa">WhatsApp</span>
+        </a>
+        <a class="btn" href="tel:+21699894545">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span data-i18n="call">Call</span>
+        </a>
+        <!-- EMAIL: change after "mailto:" (also in mahmoud.vcf) -->
+        <a class="btn" href="mailto:yasmine.dev.exp.agricole@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span data-i18n="email">Email</span>
+        </a>
+      </div>
+    </div>
   </div>
 </main>
+
+<script>
+(function () {
+  var T = {
+    en: { role: "CEO", sub: "Agricultural expert & consultant", where: "Takelsa, Nabeul, Tunisia",
+          years: "years in the field", c1: "Citrus", c2: "Apples", c3: "Grapes",
+          save: "Save contact", wa: "WhatsApp", call: "Call", email: "Email" },
+    fr: { role: "Gérant", sub: "Expert et consultant agricole", where: "Takelsa, Nabeul, Tunisie",
+          years: "ans d’expérience terrain", c1: "Agrumes", c2: "Pommiers", c3: "Vigne",
+          save: "Enregistrer le contact", wa: "WhatsApp", call: "Appeler", email: "E-mail" },
+    ar: { role: "المسيّر", sub: "خبير ومستشار فلاحي", where: "تاكلسة، نابل، تونس",
+          years: "سنة من الخبرة الميدانية", c1: "القوارص", c2: "التفاح", c3: "العنب",
+          save: "حفظ جهة الاتصال", wa: "واتساب", call: "اتصال", email: "البريد" }
+  };
+  var root = document.documentElement;
+  document.body.classList.remove("no-js");
+
+  function apply(lang) {
+    if (!T[lang]) lang = "en";
+    var t = T[lang];
+    root.lang = lang;
+    root.dir = lang === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = t[el.dataset.i18n]; });
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.setLang === lang));
+    });
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem("card-lang"); } catch (e) {}
+  var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+  apply(saved || (T[nav] ? nav : "en"));
+
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      apply(b.dataset.setLang);
+      try { localStorage.setItem("card-lang", b.dataset.setLang); } catch (e) {}
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -2,8 +2,11 @@ BEGIN:VCARD
 VERSION:3.0
 N:Bouassida;Mahmoud;;;
 FN:Mahmoud Bouassida
-TITLE:Agricultural Expert and Consultant
+ORG;CHARSET=UTF-8:Sté Yasmine de développement et exploitation agricole
+TITLE:CEO
 TEL;TYPE=CELL:+21699894545
-EMAIL;TYPE=INTERNET:mahmoud.bouassida@gmail.com
-NOTE:20+ years of experience. Citrus\, apples\, grapes and agricultural projects.
+EMAIL;TYPE=INTERNET:yasmine.dev.exp.agricole@gmail.com
+ADR;TYPE=WORK:;;;Takelsa;Nabeul;;Tunisia
+URL:https://peroute.github.io/card/
+NOTE:Agricultural expert and consultant with 20+ years of experience. Citrus\, apples\, grapes and agricultural projects.
 END:VCARD

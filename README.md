@@ -1,6 +1,6 @@
 # card
 
-Digital business card for **Mahmoud Bouassida**, agricultural expert and consultant: **https://peroute.github.io/card/**
+Digital business card for **Mahmoud Bouassida**, CEO of Sté Yasmine de développement et exploitation agricole: **https://peroute.github.io/card/**
 
 ## ⚠️ Do not break the printed QR code
 
@@ -17,8 +17,9 @@ You can change everything else (page content, contact file, design) at any time.
 
 | File | What it is |
 |---|---|
-| `index.html` | The page. Self-contained, inline CSS and SVG, no JS. |
+| `index.html` | The page. Self-contained, inline CSS and SVG. A small inline script handles the FR / AR / EN switch (the page still works in English without it). |
 | `mahmoud.vcf` | vCard 3.0 contact file used by the "Save contact" button. |
+| `og.jpg` | 1200×630 preview image shown when the link is shared on WhatsApp, LinkedIn, iMessage. |
 | `qr.png` | 1480×1480 QR code (error correction Q, 4-module quiet zone). |
 | `qr.svg` | Vector version of the same QR code. Use this for printing. |
 | `.gitattributes` | Keeps `.vcf` line endings as CRLF (required by the vCard spec). |
@@ -31,13 +32,14 @@ Most info is in **two places**. When you change something, update **both** files
 | Info | `index.html` | `mahmoud.vcf` |
 |---|---|---|
 | Name | `<title>`, `<h1>` | `N:Last;First;;;` and `FN:First Last` |
-| Position | `<p class="title">` and the `<meta name="description">` | `TITLE:` |
-| Experience / crops | `<p class="exp">`, `<p class="crops">` | `NOTE:` |
-| Phone | not shown on the page | `TEL;TYPE=CELL:+...` |
+| Role / specialties / crops | the `T = { en, fr, ar }` table in the `<script>` (all three languages) **and** the English fallback text in the HTML, plus the `og:` and `description` meta tags | `TITLE:`, `NOTE:` |
+| Company | `<p class="company">` (kept in French in every language) and the `og:`/`description` meta tags | `ORG;CHARSET=UTF-8:` |
+| Location | `where` in the `T` table (all three languages) and the HTML fallback | `ADR;TYPE=WORK:;;;City;Region;;Country` |
+| Phone | `https://wa.me/<digits>` and `tel:+<digits>` | `TEL;TYPE=CELL:+...` |
 | Email | `href="mailto:..."` | `EMAIL;TYPE=INTERNET:` |
 
-To add a company name, add a line `ORG:Company Name` to `mahmoud.vcf`.
-To add a Call button back, copy the Email `<a class="btn">` block in `index.html` and change its link to `tel:+<digits>`.
+To use a photo instead of the "MB" monogram, add `photo.jpg` (square, at least 300×300) and follow the `PHOTO:` comment in `index.html`.
+If you change the name or role, regenerate `og.jpg` so link previews match.
 
 ### Rules for `mahmoud.vcf`
 
@@ -45,6 +47,7 @@ To add a Call button back, copy the Email `<a class="btn">` block in `index.html
 - One field per line, no blank lines.
 - Phone numbers go in international format: `+` and country code, then the digits, no spaces.
 - In `NOTE:` and other text fields, write each comma as `\,` (that's how the vCard format escapes commas).
+- Keep `;CHARSET=UTF-8` on lines with accented letters (é, à…) so every phone decodes them correctly.
 - Line endings must be CRLF. `.gitattributes` already stops git from converting them. If you edit in VS Code, check the bottom-right corner shows `CRLF`.
 - Don't edit it with `sed -i` from Git Bash on Windows: it silently strips the CR characters. Use an editor or Python.
 
