@@ -20,6 +20,8 @@ You can change everything else (page content, contact file, design) at any time.
 | `index.html` | The page. Self-contained, inline CSS and SVG. A small inline script handles the FR / AR / EN switch (the page still works in English without it). |
 | `mahmoud.vcf` | vCard 3.0 contact file used by the "Save contact" button. |
 | `og.jpg` | 1200×630 preview image shown when the link is shared on WhatsApp, LinkedIn, iMessage. |
+| `favicon-32.png`, `icon-192.png` | Round "MB" site icon (browser tab, sidebar, bookmarks, Android home screen). Matches the monogram in `og.jpg`. |
+| `apple-touch-icon.png` | 180×180 square version for the iPhone home screen (iOS rounds the corners itself). |
 | `qr.png` | 1480×1480 QR code (error correction Q, 4-module quiet zone). |
 | `qr.svg` | Vector version of the same QR code. Use this for printing. |
 | `.gitattributes` | Keeps `.vcf` line endings as CRLF (required by the vCard spec). |
