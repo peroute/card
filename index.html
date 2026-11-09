@@ -3,40 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hedi Bouassida</title>
-<meta name="description" content="Hedi Bouassida · Computer Science · Texas Tech University">
+<title>Mahmoud Bouassida</title>
+<meta name="description" content="Mahmoud Bouassida, agricultural expert and consultant. 20+ years of experience with citrus, apples, grapes and agricultural projects.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e7eadb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121710" media="(prefers-color-scheme: dark)">
 <style>
   /* ---- Theme: edit colors here. Dark mode overrides are below. ---- */
   :root {
-    --bg: #f6f5f2;
-    --card: #ffffff;
-    --text: #18181b;
-    --muted: #6b6b70;
-    --line: #e6e4df;
-    --accent: #cc0000;        /* Texas Tech red */
-    --accent-text: #ffffff;
-    --btn: #f1efeb;
-    --btn-hover: #e8e5df;
+    --bg: #e7eadb;          /* sage */
+    --card: #fafaf4;
+    --text: #2a2a1f;        /* dark loam */
+    --muted: #66654f;
+    --line: #d9dcc8;
+    --primary: #2f5d3a;     /* leaf green */
+    --primary-text: #f6f7ee;
+    --btn: #eff1e4;
+    --btn-hover: #e4e8d4;
+    --focus: #e8891c;
+    --crops: #3f6b35;       /* "Citrus, apples, grapes..." line */
+
+    /* Orchard illustration */
+    --band: #dde6cc;        /* orchard background */
+    --grass: #c9d8b0;
+    --orange: #e8891c;
+    --orange-flesh: #f4a23a;
+    --pith: #fce7c2;
+    --lemon: #efc93a;
+    --apple: #c8372d;
+    --grape: #6b3a6e;
+    --grape-2: #82508a;
+    --leaf: #5e8f3e;
+    --stem: #6b4a2b;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121212;
-      --card: #1c1c1e;
-      --text: #f2f2f2;
-      --muted: #a1a1a6;
-      --line: #2c2c2e;
-      --accent: #e0302f;
-      --accent-text: #ffffff;
-      --btn: #2a2a2d;
-      --btn-hover: #343438;
+      --bg: #121710;
+      --card: #1a2017;
+      --text: #e9ebdd;
+      --muted: #a3a68e;
+      --line: #2c3427;
+      --primary: #8fb86f;
+      --primary-text: #142012;
+      --btn: #242c20;
+      --btn-hover: #2d3628;
+      --focus: #f0a04a;
+      --crops: #a9c98c;
+
+      --band: #202a1c;
+      --grass: #283522;
+      --orange: #d07a1a;
+      --orange-flesh: #dc9033;
+      --pith: #e6d3ad;
+      --lemon: #d4b334;
+      --apple: #b0322a;
+      --grape: #5e3462;
+      --grape-2: #73467a;
+      --leaf: #4f7a35;
+      --stem: #8a6a48;
     }
   }
 
   * { box-sizing: border-box; margin: 0; }
-  html, body { height: 100%; }
+  html, body { min-height: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
@@ -44,7 +73,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
     -webkit-font-smoothing: antialiased;
   }
   main {
@@ -52,30 +83,53 @@
     max-width: 400px;
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 40px 24px 28px;
-    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
   }
-  .avatar {
-    width: 84px; height: 84px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--accent-text);
-    display: grid; place-items: center;
-    font-size: 30px; font-weight: 600; letter-spacing: 1px;
-  }
-  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-  .title { margin-top: 6px; color: var(--muted); font-size: 15px; }
 
-  .actions { margin-top: 32px; display: grid; gap: 12px; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  /* Orchard illustration: citrus, apple, grapes */
+  .orchard { display: block; width: 100%; height: auto; }
+  .orchard .band { fill: var(--band); }
+  .orchard .grass { fill: var(--grass); }
+  .orchard .orange { fill: var(--orange); }
+  .orchard .flesh { fill: var(--orange-flesh); }
+  .orchard .pith { fill: var(--pith); }
+  .orchard .divide { stroke: var(--pith); stroke-width: 2.5; stroke-linecap: round; }
+  .orchard .lemon { fill: var(--lemon); }
+  .orchard .apple { fill: var(--apple); }
+  .orchard .grape { fill: var(--grape); }
+  .orchard .grape-2 { fill: var(--grape-2); }
+  .orchard .leaf { fill: var(--leaf); }
+  .orchard .stem { fill: none; stroke: var(--stem); stroke-width: 3; stroke-linecap: round; }
+  .orchard .shine { fill: #ffffff; opacity: .22; }
+
+  /* One load moment: the three fruits rise in, left to right. */
+  .orchard .fruit { animation: rise .7s cubic-bezier(.2, .7, .3, 1) both; }
+  .orchard .fruit:nth-of-type(2) { animation-delay: .12s; }
+  .orchard .fruit:nth-of-type(3) { animation-delay: .24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .orchard .fruit { animation: none; } }
+
+  .body { padding: 26px 24px 24px; }
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: 34px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  .title { margin-top: 8px; color: var(--text); font-size: 17px; line-height: 1.4; }
+  .exp { margin-top: 2px; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  .crops { margin-top: 14px; color: var(--crops); font-size: 15px; font-weight: 600; line-height: 1.45; text-wrap: balance; }
+
+  .actions { margin-top: 26px; display: grid; gap: 10px; }
   a.btn {
     display: flex; align-items: center; justify-content: center; gap: 10px;
-    min-height: 54px;
+    min-height: 52px;
     padding: 0 16px;
-    border-radius: 14px;
+    border-radius: 12px;
     background: var(--btn);
+    border: 1px solid var(--line);
     color: var(--text);
     text-decoration: none;
     font-size: 16px; font-weight: 600;
@@ -84,48 +138,81 @@
   }
   a.btn:hover { background: var(--btn-hover); }
   a.btn:active { transform: scale(0.98); }
-  a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-  a.btn.primary { background: var(--accent); color: var(--accent-text); font-size: 17px; min-height: 58px; }
+  a.btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  a.btn.primary {
+    background: var(--primary); border-color: var(--primary);
+    color: var(--primary-text); font-size: 17px; min-height: 56px;
+  }
   a.btn.primary:hover { filter: brightness(1.08); }
-  svg { width: 20px; height: 20px; flex: none; }
+  .btn svg { width: 20px; height: 20px; flex: none; }
 
-  footer { margin-top: 24px; font-size: 12px; color: var(--muted); }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <div class="avatar" aria-hidden="true">HB</div>
-  <h1>Hedi Bouassida</h1>
-  <p class="title">Computer Science · Texas Tech University</p>
+  <!-- Orchard illustration: citrus, apple, grapes. Colors come from the CSS variables above. -->
+  <svg class="orchard" viewBox="0 0 400 150" aria-hidden="true" focusable="false">
+    <rect class="band" width="400" height="150"/>
+    <rect class="grass" y="128" width="400" height="22"/>
 
-  <div class="actions">
-    <!-- Save contact: opens the native "Add to Contacts" sheet on iOS / Android. -->
-    <a class="btn primary" href="hedi.vcf">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-      Save contact
-    </a>
+    <!-- Citrus: a whole lemon behind a cut orange showing its segments -->
+    <g class="fruit">
+      <ellipse class="lemon" cx="52" cy="62" rx="22" ry="16" transform="rotate(-25 52 62)"/>
+      <circle class="orange" cx="84" cy="84" r="36"/>
+      <circle class="pith" cx="84" cy="84" r="32"/>
+      <circle class="flesh" cx="84" cy="84" r="29"/>
+      <path class="divide" d="M84 84V55M84 84V113M84 84H55M84 84H113M84 84L63.5 63.5M84 84L104.5 63.5M84 84L63.5 104.5M84 84L104.5 104.5"/>
+      <circle class="pith" cx="84" cy="84" r="4"/>
+    </g>
 
-    <div class="row">
-      <!-- PHONE: edit the number after "tel:" (no spaces, include +country code) -->
-      <a class="btn" href="tel:+15555550100">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call
+    <!-- Apple -->
+    <g class="fruit">
+      <path class="apple" d="M200 64C188 54 166 58 164 82C162 106 182 124 194 120C198 119 202 119 206 120C218 124 238 106 236 82C234 58 212 54 200 64Z"/>
+      <path class="stem" d="M200 64C200 56 202 50 205 46"/>
+      <path class="leaf" d="M205 50C212 38 228 37 233 43C225 53 212 56 205 50Z"/>
+      <ellipse class="shine" cx="179" cy="78" rx="5" ry="10" transform="rotate(-20 179 78)"/>
+    </g>
+
+    <!-- Grapes on the vine -->
+    <g class="fruit">
+      <path class="stem" d="M320 48C321 42 324 38 332 38"/>
+      <path class="leaf" d="M330 40C334 26 350 21 358 29C367 29 370 40 364 46C366 55 353 59 347 53C339 55 330 49 330 40Z"/>
+      <circle class="grape" cx="293" cy="58" r="9.5"/>
+      <circle class="grape-2" cx="311" cy="58" r="9.5"/>
+      <circle class="grape" cx="329" cy="58" r="9.5"/>
+      <circle class="grape-2" cx="347" cy="58" r="9.5"/>
+      <circle class="grape-2" cx="302" cy="74" r="9.5"/>
+      <circle class="grape" cx="320" cy="74" r="9.5"/>
+      <circle class="grape-2" cx="338" cy="74" r="9.5"/>
+      <circle class="grape" cx="311" cy="90" r="9.5"/>
+      <circle class="grape-2" cx="329" cy="90" r="9.5"/>
+      <circle class="grape" cx="320" cy="106" r="9.5"/>
+    </g>
+  </svg>
+
+  <div class="body">
+    <h1>Mahmoud Bouassida</h1>
+    <p class="title">Agricultural expert and consultant</p>
+    <p class="exp">20+ years of experience</p>
+    <p class="crops">Citrus, apples, grapes and agricultural projects</p>
+
+    <div class="actions">
+      <!-- Save contact: opens the native "Add to Contacts" sheet on iOS / Android. -->
+      <a class="btn primary" href="mahmoud.vcf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+        Save contact
       </a>
-      <a class="btn" href="https://www.linkedin.com/in/hedi-bouassida" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-        LinkedIn
+
+      <!-- EMAIL: replace contact@example.com with the real address (also in mahmoud.vcf) -->
+      <a class="btn" href="mailto:contact@example.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email
       </a>
     </div>
 
-    <!-- EMAIL: to add an email button, uncomment this block and put your address after "mailto:"
-    <a class="btn" href="mailto:you@example.com">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-      Email
-    </a>
-    -->
+    <p class="note">Tap “Save contact” to add me to your phone.</p>
   </div>
-
-  <footer>Tap “Save contact” to add me to your phone.</footer>
 </main>
 </body>
 </html>
