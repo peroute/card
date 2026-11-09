@@ -1,6 +1,6 @@
 # card
 
-My digital business card: **https://peroute.github.io/card/**
+Digital business card for **Mahmoud Bouassida**, agricultural expert and consultant: **https://peroute.github.io/card/**
 
 ## ⚠️ Do not break the printed QR code
 
@@ -17,33 +17,36 @@ You can change everything else (page content, contact file, design) at any time.
 
 | File | What it is |
 |---|---|
-| `index.html` | The page. Self-contained, inline CSS, no JS. |
-| `hedi.vcf` | vCard 3.0 contact file used by the "Save contact" button. |
+| `index.html` | The page. Self-contained, inline CSS and SVG, no JS. |
+| `mahmoud.vcf` | vCard 3.0 contact file used by the "Save contact" button. |
 | `qr.png` | 1480×1480 QR code (error correction Q, 4-module quiet zone). |
 | `qr.svg` | Vector version of the same QR code. Use this for printing. |
-| `.gitattributes` | Keeps `hedi.vcf` line endings as CRLF (required by the vCard spec). |
+| `.gitattributes` | Keeps `.vcf` line endings as CRLF (required by the vCard spec). |
 | `.nojekyll` | Makes GitHub Pages serve the files as-is, without running Jekyll. |
 
-## Editing my info
+## Editing the info
 
-Your info is in **two places**. When you change something, update **both** files:
+Most info is in **two places**. When you change something, update **both** files:
 
-| Info | `index.html` | `hedi.vcf` |
+| Info | `index.html` | `mahmoud.vcf` |
 |---|---|---|
-| Name | `<title>`, `<h1>`, avatar initials `HB` | `N:Last;First;;;` and `FN:First Last` |
-| Title line | `<p class="title">` and the `<meta name="description">` | `ORG:` and `TITLE:` |
-| Phone | `href="tel:+1..."` (no spaces) | `TEL;TYPE=CELL:+1...` |
-| Email | Uncomment the `EMAIL` block and set `mailto:` | Add a line `EMAIL;TYPE=INTERNET:you@example.com` |
-| LinkedIn | LinkedIn `<a href>` | `item1.URL:` |
+| Name | `<title>`, `<h1>` | `N:Last;First;;;` and `FN:First Last` |
+| Position | `<p class="title">` and the `<meta name="description">` | `TITLE:` |
+| Experience / crops | `<p class="exp">`, `<p class="crops">` | `NOTE:` |
+| Phone | not shown on the page | `TEL;TYPE=CELL:+...` |
+| Email | `href="mailto:..."` | `EMAIL;TYPE=INTERNET:` |
 
-> The phone number is currently a **placeholder** (`+1 555-555-0100`). Replace it in both files.
+To add a company name, add a line `ORG:Company Name` to `mahmoud.vcf`.
+To add a Call button back, copy the Email `<a class="btn">` block in `index.html` and change its link to `tel:+<digits>`.
 
-### Rules for `hedi.vcf`
+### Rules for `mahmoud.vcf`
 
 - Keep `BEGIN:VCARD` first, `VERSION:3.0` second, and `END:VCARD` last.
 - One field per line, no blank lines.
-- Phone numbers go in international format: `+1` followed by the digits.
+- Phone numbers go in international format: `+` and country code, then the digits, no spaces.
+- In `NOTE:` and other text fields, write each comma as `\,` (that's how the vCard format escapes commas).
 - Line endings must be CRLF. `.gitattributes` already stops git from converting them. If you edit in VS Code, check the bottom-right corner shows `CRLF`.
+- Don't edit it with `sed -i` from Git Bash on Windows: it silently strips the CR characters. Use an editor or Python.
 
 ### Publishing a change
 
